@@ -1,0 +1,115 @@
+﻿{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "test bot",
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      },
+      "intents": [
+        {
+          "name": "GetUserIntent",
+          "slots": [
+            {
+              "name": "phrase",
+              "type": "phrase"
+            }
+          ],
+          "samples": [
+            " i need {phrase}",
+            " i want a {phrase}",
+            " i want {phrase}",
+            "{phrase}"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": [
+            "the sky is blue"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.MoreIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateSettingsIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageUpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollRightIntent",
+          "samples": [
+            "scroll right"
+          ]
+        },
+        {
+          "name": "AMAZON.ScrollDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollLeftIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollUpIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "phrase",
+          "values": [
+            {
+              "name": {
+                "value": "Get an overview"
+              }
+            },
+            {
+              "name": {
+                "value": "ask a question"
+              }
+            },
+            {
+              "name": {
+                "value": "learn how to deploy"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
