@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Alexa.NET.Response;
+using Bot.Builder.Community.Adapters.Alexa.Core.Attachments;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -47,6 +49,19 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                     MessageFactory.Text("NOTE: LUIS is not configured. To enable all capabilities, add 'LuisAppId', 'LuisAPIKey' and 'LuisAPIHostName' to the appsettings.json file.", inputHint: InputHints.IgnoringInput), cancellationToken);
 
                 return await stepContext.NextAsync(null, cancellationToken);
+            }
+
+            if (stepContext.Context.Activity.Text.Equals("Alexa card"))
+            {
+                var activityWithCard = MessageFactory.Text($"Ok, I included a simple card.");
+                activityWithCard.Attachments.Add(
+                    new SimpleCard()
+                    {
+                        Title = "This is a simple card",
+                        Content = "This is the simple card content"
+                    }.ToAttachment());
+
+                await stepContext.Context.SendActivityAsync(activityWithCard, cancellationToken);
             }
 
             // Use the text provided in FinalStepAsync or the default if it is the first time.
